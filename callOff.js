@@ -1,50 +1,35 @@
-db.calloffs.insert([
+[
   {
-    title: 'War and Peace',
-    genre: 'Historical Fiction',
-    author: 'Lev Nikolayevich Tolstoy',
-    read: false
+    dateTimeSubmitted: '08/22/2023 12:01:59',
+    callOffDate: '08/22/2023',
+    employeeID: 'N0027173',
+    lastName: 'Allen',
+    firstName: 'Stacy',
+    office: '0412 - Mishawaka',
+    callOffReason: 'FMLA',
+    comments: 'test comments',
+    IEXUpdated: 'n/a'
   },
   {
-    title: 'Les Misérables',
-    genre: 'Historical Fiction',
-    author: 'Victor Hugo',
-    read: false
+    dateTimeSubmitted: '08/21/2023 13:01:59',
+    callOffDate: '08/22/2023',
+    employeeID: 'N1587278',
+    lastName: 'Thouvenin',
+    firstName: 'Shannon',
+    office: '083S - Columbus',
+    callOffReason: 'Jury Duty',
+    comments: 'test comments',
+    IEXUpdated: 'n/a'
   },
   {
-    title: 'The Time Machine',
-    genre: 'Science Fiction',
-    author: 'H. G. Wells',
-    read: false
+    dateTimeSubmitted: '08/23/2023 13:01:59',
+    callOffDate: '08/23/2023',
+    employeeID: 'N0233500',
+    lastName: 'Roache',
+    firstName: 'James',
+    office: '099H - New York',
+    callOffReason: 'FMLA',
+    comments: 'some comments go here',
+    IEXUpdated: 'Yes'
   },
-  {
-    title: 'A Journey into the Center of the Earth',
-    genre: 'Science Fiction',
-    author: 'Jules Verne',
-    read: false
-  },
-  {
-    title: 'The Dark World',
-    genre: 'Fantasy',
-    author: 'Henry Kuttner',
-    read: false
-  },
-  {
-    title: 'The Wind in the Willows',
-    genre: 'Fantasy',
-    author: 'Kenneth Grahame',
-    read: false
-  },
-  {
-    title: 'Life On The Mississippi',
-    genre: 'History',
-    author: 'Mark Twain',
-    read: false
-  },
-  {
-    title: 'Childhood',
-    genre: 'Biography',
-    author: 'Lev Nikolayevich Tolstoy',
-    read: false
-  }
-  ])
+  ]
