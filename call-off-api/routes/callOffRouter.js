@@ -1,14 +1,12 @@
 /* eslint-disable no-param-reassign */
-const express = require('express');
-const callOffsController = require('../controllers/callOffsController');
+const express = require("express");
+const callOffsController = require("../controllers/callOffsController");
 
 function routes(CallOff) {
   const callOffRouter = express.Router();
   const controller = callOffsController(CallOff);
-  callOffRouter.route('/callOffs')
-    .post(controller.post)
-    .get(controller.get);
-  callOffRouter.use('/callOffs/:callOffId', (req, res, next) => {
+  callOffRouter.route("/callOffs").post(controller.post).get(controller.get);
+  callOffRouter.use("/callOffs/:callOffId", (req, res, next) => {
     CallOff.findById(req.params.callOffId, (err, callOff) => {
       if (err) {
         return res.send(err);
@@ -20,7 +18,8 @@ function routes(CallOff) {
       return res.sendStatus(404);
     });
   });
-  callOffRouter.route('/callOffs/:callOffId')
+  callOffRouter
+    .route("/callOffs/:callOffId")
     .get((req, res) => {
       const returnCallOff = req.callOff.toJSON();
 
@@ -40,6 +39,7 @@ function routes(CallOff) {
       // callOff.callOffReason = req.body.callOffReason;
       // callOff.comments = req.body.comments;
       // callOff.IEXUpdated = req.body.IEXUpdated;
+      // Extra Comment
       req.callOff.save((err) => {
         if (err) {
           return res.send(err);
