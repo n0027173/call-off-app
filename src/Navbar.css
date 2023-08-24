@@ -1,12 +1,19 @@
-    /* Default height for small devices */
-    #intro-example {
-      height: 100px;
-      height: 100px;
-    }
+.libertyLogo img {
+  max-width: 20%;
+  height: auto;
+}
 
-    /* Height for devices larger than 992px */
-    @media (min-width: 992px) {
-      #intro-example {
-        height: 100px;
-      }
-    }
+/* #mr-foobar {
+  color: #ffffff;
+  background-color: #333;
+  border-color: #ffffff;
+  
+
+}
+
+
+#mr-foobar a:hover{
+  color: #ffffff;
+  background-color: aqua;
+  
+} */

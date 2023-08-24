@@ -37,6 +37,7 @@ const Create = () => {
   return (
     <div className="create">
       <form onSubmit={submitCallOff}>
+        <h1>CALL OFF FORM</h1>
         <label>Call Off Date:</label>
         <input type="text" required onChange={(e) => setDate(e.target.value)} />
         <label>Employee ID:</label>
