@@ -39,7 +39,7 @@ const NavBar = (props) => {
             <Collapse isOpen={!collapsed} navbar>
               <Nav navbar>
               <NavItem>
-                  <NavLink href="/Admin"
+                  <NavLink href="/CallOffDetails"
                   // onClick={(e) => {
                   //   handleLinkClick("Admin");
                   // }}
