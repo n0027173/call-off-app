@@ -18,11 +18,11 @@ const NavBar = (props) => {
   const toggleNavbar = () => setCollapsed(!collapsed);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white">
+    <nav className="navbar navbar-expand-lg navbar-light bg-yellow">
       <div className="container-fluid">
         <div>
           <Navbar color="faded" light>
-          {/* <Navbar color="#ffd000"> */}
+            {/* <Navbar color="#ffd000"> */}
             <NavbarToggler onClick={toggleNavbar} className="mr-2" />
             <NavbarBrand href="/" className="mr-auto">
               Call Off Form
@@ -31,9 +31,9 @@ const NavBar = (props) => {
               <Nav navbar>
                 <NavItem>
                   <NavLink
-                    // onClick={(e) => {
-                    //   handleLinkClick("Admin");
-                    // }}
+                  // onClick={(e) => {
+                  //   handleLinkClick("Admin");
+                  // }}
                   >
                     Admin
                   </NavLink>
