@@ -20,6 +20,7 @@ const NavBar = (props) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-yellow">
       <div className="container-fluid">
+        <img src="../assets/liberty.png" alt="Liberty Logo" />
         <div>
           <Navbar color="faded" light>
             {/* <Navbar color="#ffd000"> */}

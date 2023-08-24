@@ -1,7 +1,7 @@
 /* base styles */
 * {
   margin: 0;
-  font-family: "Roboto";
+  font-family: Arial, Helvetica, sans-serif;
   color: #333;
 }
 
@@ -53,12 +53,6 @@ section {
   cursor: hand;
   text-decoration: underline;
 }
-/* .content {
-  max-width: 600px;
-  color: #343741;
-  margin: 40px auto;
-  padding: 20px;
-} */
 /* create new blog form */
 .create {
   max-width: 400px;
@@ -85,12 +79,3 @@ section {
   display: block;
   font-size: 0.9rem;
 }
-/* .create button {
-  background: #06748C;
-  color: #fff;
-  border: 0;
-  padding: 15px 25px 15px 25px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 18px;
-}*/

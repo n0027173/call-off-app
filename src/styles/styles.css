@@ -18,14 +18,15 @@ label {
   font-weight: bold;
 }
 /* Define the style for input fields when they are focused or hovered */
-input:focus, input:hover {
-  border-bottom-color: #28A3AF;
+input:focus,
+input:hover {
+  border-bottom-color: #28a3af;
 }
 
 /* Define the style for links */
 a {
   text-decoration: none;
-  color: #06748C;
+  color: #06748c;
 }
 
 /* Define the style for buttons */
@@ -33,7 +34,7 @@ button {
   font-size: 18px;
   border: none;
   /* background-color: #99E5EA; */
-  background-color: #06748C;
+  background-color: #06748c;
   border: 0;
   padding: 15px 25px 15px 25px;
   border-radius: 8px;
@@ -42,10 +43,11 @@ button {
 }
 
 /* Define the style for buttons when they are hovered or pressed */
-button:hover, button:active {
-  background-color: #06748C;
+button:hover,
+button:active {
+  background-color: #f5f5f5;
   border: 0;
-  padding: 15px 25px 15px 25px;
-  border-radius: 8px;
+  /* padding: 15px 25px 15px 25px; */
+  /* border-radius: 8px; */
   cursor: pointer;
 }
