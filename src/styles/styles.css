@@ -1,0 +1,51 @@
+/* Define the style for input fields */
+input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid #707070;
+  outline: none;
+}
+
+/* Define the style for input labels when they are floating above the input fields */
+/* label.floating {
+  font-size: 2rem;
+  top: -10px;
+} */
+label {
+  font-size: 1rem;
+  top: -10px;
+  font-weight: bold;
+}
+/* Define the style for input fields when they are focused or hovered */
+input:focus, input:hover {
+  border-bottom-color: #28A3AF;
+}
+
+/* Define the style for links */
+a {
+  text-decoration: none;
+  color: #06748C;
+}
+
+/* Define the style for buttons */
+button {
+  font-size: 18px;
+  border: none;
+  /* background-color: #99E5EA; */
+  background-color: #06748C;
+  border: 0;
+  padding: 15px 25px 15px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Define the style for buttons when they are hovered or pressed */
+button:hover, button:active {
+  background-color: #06748C;
+  border: 0;
+  padding: 15px 25px 15px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+}

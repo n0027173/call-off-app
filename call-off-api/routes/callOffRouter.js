@@ -23,9 +23,9 @@ function routes(CallOff) {
     .get((req, res) => {
       const returnCallOff = req.callOff.toJSON();
 
-      // returnCallOff.links = {};
-      // const callOffReason = req.callOff.callOffReason.replace(' ', '%20');
-      // returnCallOff.links.FilterByThisCallOffReason = `http://${req.headers.host}/api/callOffs/?callOffReason=${callOffReason}`;
+      returnCallOff.links = {};
+      const callOffReason = req.callOff.callOffReason.replace(' ', '%20');
+      returnCallOff.links.FilterByThisCallOffReason = `http://${req.headers.host}/api/callOffs/?callOffReason=${callOffReason}`;
       res.json(returnCallOff);
     })
     .put((req, res) => {
@@ -33,12 +33,12 @@ function routes(CallOff) {
       callOff.dateTimeSubmitted = req.body.dateTimeSubmitted;
       callOff.callOffDate = req.body.callOffDate;
       callOff.employeeID = req.body.employeeID;
-      // callOff.lastName = req.body.lastName;
-      // callOff.firstName = req.body.firstName;
-      // callOff.office = req.body.office;
-      // callOff.callOffReason = req.body.callOffReason;
-      // callOff.comments = req.body.comments;
-      // callOff.IEXUpdated = req.body.IEXUpdated;
+      callOff.lastName = req.body.lastName;
+      callOff.firstName = req.body.firstName;
+      callOff.office = req.body.office;
+      callOff.callOffReason = req.body.callOffReason;
+      callOff.comments = req.body.comments;
+      callOff.IEXUpdated = req.body.IEXUpdated;
       // Extra Comment
       req.callOff.save((err) => {
         if (err) {

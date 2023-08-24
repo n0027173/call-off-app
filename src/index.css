@@ -4,19 +4,45 @@
   font-family: "Roboto";
   color: #333;
 }
-.navbar {
+
+::-webkit-scrollbar { 
+  display:none; 
+}
+
+/* Scroll Snap */
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+.navbar-toggler, .navbar-toggler:focus {
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
+  max-width: 100%;
+  max-height: 30px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
+  background-color: #ffd000;
+  align-items: center;
+  justify-content: center;
 }
 .navbar h1 {
   color: #343741;
 }
 .navbar .links {
   margin-left: auto;
+  
+}
+.navbar ul li {
+  display: inline-block;
+  list-style-type: none;
 }
 .navbar a {
   margin-left: 16px;
@@ -28,12 +54,12 @@
   cursor: hand;
   text-decoration: underline;
 }
-.content {
+/* .content {
   max-width: 600px;
   color: #343741;
   margin: 40px auto;
   padding: 20px;
-}
+} */
 /* create new blog form */
 .create {
   max-width: 400px;
@@ -45,7 +71,7 @@
   display: block;
 }
 .create h2 {
-  font-size: 20px;
+  font-size: 2rem;
   color: #343741;
   margin-bottom: 30px;
 }
@@ -56,8 +82,9 @@
   border: 1px solid #ddd;
   box-sizing: border-box;
   display: block;
+  font-size: .90rem;
 }
-.create button {
+/* .create button {
   background: #06748C;
   color: #fff;
   border: 0;
@@ -65,4 +92,4 @@
   border-radius: 8px;
   cursor: pointer;
   font-size: 18px;
-}
+}*/

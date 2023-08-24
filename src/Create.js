@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './styles/styles.css';
 
 const Create = () => {
   const [firstName, setFirstName] = useState("");
@@ -22,7 +23,7 @@ const Create = () => {
       body: JSON.stringify({
         firstName: firstName,
         lastName: lastName,
-        date: date,
+        callOffDate: date,
         dateTimeSubmitted: Date.now(),
         office: office,
         employeeID: employeeId,
@@ -36,7 +37,7 @@ const Create = () => {
   return (
     <div className="create">
       <form onSubmit={submitCallOff}>
-        <label>Date:</label>
+        <label>Call Off Date:</label>
         <input type="text" required onChange={(e) => setDate(e.target.value)} />
         <label>Employee ID:</label>
         <input
