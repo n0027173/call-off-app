@@ -23,9 +23,10 @@ function routes(CallOff) {
     .get((req, res) => {
       const returnCallOff = req.callOff.toJSON();
 
-      returnCallOff.links = {};
-      const callOffReason = req.callOff.callOffReason.replace(' ', '%20');
-      returnCallOff.links.FilterByThisCallOffReason = `http://${req.headers.host}/api/callOffs/?callOffReason=${callOffReason}`;
+      // returnCallOff.links = {};
+      // const callOffReason = req.callOff.callOffReason.replace(' ', '%20');
+      // const callOffReason = req.callOff.callOffReason;
+      // returnCallOff.links.FilterByThisCallOffReason = `http://${req.headers.host}/api/callOffs/?callOffReason=${callOffReason}`;
       res.json(returnCallOff);
     })
     .put((req, res) => {

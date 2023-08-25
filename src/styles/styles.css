@@ -51,3 +51,10 @@ button:active {
   /* border-radius: 8px; */
   cursor: pointer;
 }
+
+react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+display: block;
+width: 400px;
+}

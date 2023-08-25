@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import DatePicker from "./DatePicker";
 import './styles/styles.css';
 
 const Create = () => {
   const [firstName, setFirstName] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(new Date());
   const [office, setOffice] = useState("");
   const [lastName, setLastName] = useState("");
   const [employeeId, setEmployeeId] = useState("");
@@ -23,7 +24,7 @@ const Create = () => {
       body: JSON.stringify({
         firstName: firstName,
         lastName: lastName,
-        callOffDate: date,
+        callOffDate: date.toISOString(),
         dateTimeSubmitted: Date.now(),
         office: office,
         employeeID: employeeId,
@@ -38,9 +39,11 @@ const Create = () => {
     <>
     <div className="create">
       <form onSubmit={submitCallOff}>
+
         <h1>CALL OFF FORM</h1>
         <label>Call Off Date:</label>
-        <input type="text" required onChange={(e) => setDate(e.target.value)} />
+    
+        <DatePicker selected={date} onChange={setDate} dateFormat="MM/dd/yyyy" />
         <label>Employee ID:</label>
         <input
           type="text"

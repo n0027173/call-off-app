@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import Create from "./Create";
+import './styles/styles.css';
 
 function App() {
   return (
