@@ -26,6 +26,7 @@ const InputForm = () => {
         firstName: firstName,
         lastName: lastName,
         callOffDate: date.toISOString(),
+        callOffReason: callOffReason,
         dateTimeSubmitted: Date.now(),
         office: office,
         employeeID: employeeId,

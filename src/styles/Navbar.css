@@ -2,18 +2,34 @@
   max-width: 20%;
   height: auto;
 }
-
-/* #mr-foobar {
-  color: #ffffff;
-  background-color: #333;
-  border-color: #ffffff;
-  
-
+.navbar {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  max-height: 300px;
+  margin: 0 auto;
+  background-color: #ffd000;
+  align-items: center;
+  justify-content: center;
 }
 
-
-#mr-foobar a:hover{
-  color: #ffffff;
-  background-color: aqua;
-  
-} */
+.navbar h1 {
+  color: #343741;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+.navbar a:hover {
+  color: #343741;
+  cursor: hand;
+  text-decoration: underline;
+}
