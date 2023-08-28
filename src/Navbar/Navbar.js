@@ -1,4 +1,5 @@
-import "./styles/Navbar.css";
+import { useState } from "react";
+import "../styles/Navbar.css";
 import {
   Collapse,
   Navbar,
@@ -8,7 +9,6 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
-import { useState } from "react";
 
 const NavBar = (props) => {
   const handleLinkClick = (linkName) => {
@@ -36,17 +36,28 @@ const NavBar = (props) => {
             <Collapse isOpen={!collapsed} navbar>
               <Nav navbar>
               <NavItem>
-                  <NavLink href="/InputForm">
+                  <NavLink onClick={(e) => {
+                      handleLinkClick("InputForm");
+                    }}
+                    >
                      Form
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/Admin">
+                <NavLink onClick={(e) => {
+                      handleLinkClick("AdminReport");
+                    }}
+                    >
                     Admin
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/Guidelines">Guidelines</NavLink>
+                <NavLink onClick={(e) => {
+                      handleLinkClick("Guidelines");
+                    }}
+                    >
+                    Guidelines
+                  </NavLink>
                 </NavItem>
               </Nav>
             </Collapse>

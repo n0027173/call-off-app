@@ -1,0 +1,8 @@
+p, h2 {
+display: block;
+width: 100%;
+padding: 15px 15px 0px 15px;
+}
+h2 {
+  font-size: 1.75rem;
+}
