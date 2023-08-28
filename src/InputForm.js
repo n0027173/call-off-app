@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import DatePicker from "./DatePicker";
-import './styles/styles.css';
+import './styles/InputForm.css';
+import './styles/Buttons.css';
 
-const Create = () => {
+const InputForm = () => {
   const [firstName, setFirstName] = useState("");
   const [date, setDate] = useState(new Date());
   const [office, setOffice] = useState("");
@@ -37,10 +38,10 @@ const Create = () => {
 
   return (
     <>
-    <div className="create">
+    <div className="inputForm">
       <form onSubmit={submitCallOff}>
 
-        <h1>CALL OFF FORM</h1>
+        <h1>ABSENCE MANAGEMENT FORM</h1>
         <label>Call Off Date:</label>
     
         <DatePicker selected={date} onChange={setDate} dateFormat="MM/dd/yyyy" />
@@ -172,9 +173,8 @@ const Create = () => {
                   {/* ))} */}
             </tbody>
           </table>
- 
-         </> 
+          </> 
   );
 };
 
-export default Create;
+export default InputForm;

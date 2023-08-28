@@ -1,6 +1,6 @@
 const Guidelines = () => {
-  return ( <div className="create">
-    foobar
+  return ( <div className="guidelines">
+    Some instructions go here.
     </div> );
 }
  

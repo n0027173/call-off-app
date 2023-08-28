@@ -18,11 +18,19 @@ label {
   font-weight: bold;
 }
 /* Define the style for input fields when they are focused or hovered */
-input:focus,
-input:hover {
-  border-bottom-color: #28a3af;
+input:focus {
+  border-color: #28a3af;
+  border-width: 2px;
 }
 
+select:focus {
+  border-color: #28a3af;
+  border-width: 2px;
+}
+/* select:invalid,
+select option[value=""] {
+  color: #999999;
+} */
 /* Define the style for links */
 a {
   text-decoration: none;
@@ -52,9 +60,3 @@ button:active {
   cursor: pointer;
 }
 
-react-datepicker-wrapper,
-.react-datepicker__input-container,
-.react-datepicker__input-container input {
-display: block;
-width: 400px;
-}

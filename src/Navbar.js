@@ -1,4 +1,4 @@
-import "./Navbar.css";
+import "./styles/Navbar.css";
 import {
   Collapse,
   Navbar,
@@ -23,9 +23,6 @@ const NavBar = (props) => {
       <div className="container-fluid">
         <div>
           <Navbar color="faded" light>
-            {/* <Navbar color="#ffd000"> */}
-
-            {/* <NavbarBrand href="/" className="mr-auto"> */}
             <NavbarBrand  className="mr-auto">
             <NavbarToggler onClick={toggleNavbar} className="mr-2" />
             <img
@@ -39,35 +36,18 @@ const NavBar = (props) => {
             <Collapse isOpen={!collapsed} navbar>
               <Nav navbar>
               <NavItem>
-                  <NavLink href="/CallOffDetails"
-                  // onClick={(e) => {
-                  //   handleLinkClick("Admin");
-                  // }}
-                  >
-                     Call Off
+                  <NavLink href="/InputForm">
+                     Form
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="/Admin"
-                  // onClick={(e) => {
-                  //   handleLinkClick("Admin");
-                  // }}
-                  >
+                  <NavLink href="/Admin">
                     Admin
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="/Guidelines">Guidelines</NavLink>
                 </NavItem>
-                {/* <NavItem>
-                  <NavLink
-                    onClick={(e) => {
-                      handleLinkClick("National Parks");
-                    }}
-                  >
-                    National Parks
-                  </NavLink>
-                </NavItem> */}
               </Nav>
             </Collapse>
           </Navbar>

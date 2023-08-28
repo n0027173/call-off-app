@@ -1,13 +1,12 @@
 import Navbar from "./Navbar";
-import Create from "./Create";
-import './styles/styles.css';
+import InputForm from "./InputForm";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <div className="content">
-        <Create />
+        <InputForm />
       </div>
     </div>
   );
