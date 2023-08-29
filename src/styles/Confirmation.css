@@ -1,0 +1,14 @@
+/* .confirmation {
+  border: 1px solid teal;
+  width: 100px;
+} */
+
+p, h2 {
+  display: block;
+  width: 100%;
+  padding: 15px 15px 10px 15px;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  

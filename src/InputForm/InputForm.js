@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import DatePicker from './DatePicker'
-import '../styles/InputForm.css';
-import '../styles/Buttons.css';
+import DatePicker from "./DatePicker";
+import "../styles/InputForm.css";
+import "../styles/Buttons.css";
+// import { Router, useNavigate } from "react-router-dom";
 
-const InputForm = () => {
+const InputForm = (props) => {
   const [firstName, setFirstName] = useState("");
   const [date, setDate] = useState(new Date());
   const [office, setOffice] = useState("");
@@ -11,12 +12,15 @@ const InputForm = () => {
   const [employeeId, setEmployeeId] = useState("");
   const [callOffReason, setCallOffReason] = useState("");
   const [comments, setComments] = useState("");
+
+
   const handleOffice = (e) => {
     setOffice(e.target.value);
   };
   const handleCallOffReason = (e) => {
     setCallOffReason(e.target.value);
   };
+
   const submitCallOff = (e) => {
     e.preventDefault();
     fetch("http://localhost:8080/api/callOffs", {
@@ -33,38 +37,53 @@ const InputForm = () => {
         comments: comments,
       }),
     })
-      .then((response) => console.log(response))
+      .then((response) => {
+        console.log(response);
+        
+      })
       .catch((e) => console.log(e));
+  };
+  // const navigate = useNavigate();
+  // const handleClick = () => {
+  //   console.log("button is clicked")
+  //   navigate('./confirmation/confirmation'); // Redirect to new page
+  //   navigate('/',{replace: true}); 
+  // }
+
+  const handleSubmit = (submitButton) => {
+    props.setActiveTab(submitButton);
   };
 
   return (
     <div className="inputForm">
       <form onSubmit={submitCallOff}>
-
         <h1>ABSENCE MANAGEMENT FORM</h1>
         <label>Call Off Date:</label>
-    
-        <DatePicker selected={date} onChange={setDate} dateFormat="MM/dd/yyyy" />
-        <label>Employee ID:</label>
-        <input
+        <DatePicker
+          selected={date}
+          onChange={setDate}
+          dateFormat="MM/dd/yyyy"
+        />
+        <label htmlFor="employeeID">Employee ID:</label>
+        <input id="employeeID" name="employeeID"
           type="text"
           required
           onChange={(e) => setEmployeeId(e.target.value)}
         />
-        <label>First Name:</label>
-        <input
+        <label htmlFor="firstName">First Name:</label>
+        <input id="firstName" name="firstName"
           type="text"
           required
           onChange={(e) => setFirstName(e.target.value)}
         />
-        <label>Last Name:</label>
-        <input
+        <label htmlFor="lastName">Last Name:</label>
+        <input id="lastName" name="lastName"
           type="text"
           required
           onChange={(e) => setLastName(e.target.value)}
         />
-        <label>Office:</label>
-        <select required value={office} onChange={handleOffice}>
+        <label htmlFor="office">Office:</label>
+        <select id="office" name="office" required value={office} onChange={handleOffice}>
           <option value="">-- Select --</option>
           <option value="0001 - Boston, MA">0001 - Boston, MA</option>
           <option value="016C - Dover, NH">016C - Dover, NH</option>
@@ -73,30 +92,29 @@ const InputForm = () => {
           <option value="0694 - Chandler, AZ">0694 - Chandler, AZ</option>
           <option value="0808 - New Castle, PA">0808 - New Castle, PA</option>
         </select>
-        <label>Call Off Reason:</label>
-        <select required value={callOffReason} onChange={handleCallOffReason}>
+        <label htmlFor="callOffReason">Call Off Reason:</label>
+        <select id="callOffReason" name="callOffReason" required value={callOffReason} onChange={handleCallOffReason}>
           <option value="">-- Select --</option>
           <option value="ADA (Paid)">ADA (Paid)</option>
           <option value="ADA (Unpaid)">ADA (Unpaid)</option>
+          <option value="Beach Day">Beach Day</option>
           <option value="Bereavement">Bereavement</option>
           <option value="FMLA (Paid)">FMLA (Paid)</option>
           <option value="FMLA (Unpaid)">FMLA (Unpaid)</option>
           <option value="Jury Duty">Jury Duty</option>
           <option value="Lost Time">Lost Time</option>
-          <option value="MA PFMLA (Unpaid)">MA PFMLA (Unpaid)</option>
-          <option value="State Sick Leave">State Sick Leave</option>
           <option value="STD">STD</option>
           <option value="Tardy">Tardy</option>
           <option value="UPTO">UPTO</option>
           <option value="Vacated - OT">Vacated - OT</option>
           <option value="Other">Other</option>
         </select>
-        <label>Comments:</label>
-        <textarea onChange={(e) => setComments(e.target.value)}></textarea>
-        <button type="submit">Submit</button>
+        <label htmlFor="comments">Comments:</label>
+        <textarea id="comments" name="comments" onChange={(e) => setComments(e.target.value)}></textarea>
+        <button onClick={(e) => {handleSubmit("ConfirmationPage")}} type="submit">Submit</button>
       </form>
-      </div>
-  );
+    </div>
+    );
 };
 
 export default InputForm;

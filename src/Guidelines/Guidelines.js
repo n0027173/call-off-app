@@ -8,8 +8,8 @@ const Guidelines = () => {
         Notifying Attendance Line and your supervisor of any expected delay
         provides them an opportunity to care for any potential rescheduling of
         coaching, training, or meetings.       
-        </p>
-      <p>
+        <br />
+        <br />
         <b>Do not</b> submit this form, if you are: 
         <br />
         <ul>
@@ -17,9 +17,7 @@ const Guidelines = () => {
             <li>for consecutive days</li>
             <li>in the office and need to leave early</li>
           </ul>
-      </p>
-      <p>
-      Please just notify your Supervisor and update Calabrio MyTime.
+      Please notify your Supervisor and update Calabrio MyTime.
       </p>
     </div>
   );

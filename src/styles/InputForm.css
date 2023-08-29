@@ -1,34 +1,65 @@
 .inputForm {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
-  text-align: center;
+  /* margin: 20px; */
+  text-align: left;
 }
+
 .inputForm label {
   text-align: left;
   display: block;
 }
+
 .inputForm h1 {
-  padding: 15px 0px 0px 0px;
+  padding: 20px 0px 0px 0px;
   text-align: left;
   margin: 0 auto;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #343741;
   margin-bottom: 30px;
 }
+
 .inputForm h2 {
   font-size: 2rem;
   color: #343741;
   margin-bottom: 30px;
 }
+
 .inputForm input,
-.inputForm textarea,
 .inputForm select {
-  width: 100%;
+  width: 400px;
+  height: 35px;
   padding: 6px 10px;
   margin: 10px 0;
   border: 1px solid #ddd;
   box-sizing: border-box;
   display: block;
   font-size: 0.9rem;
+  border-radius: 4px;
 }
 
+.inputForm textarea {
+  width:400px;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+.inputForm input:focus,
+.inputForm input:focus-visible,
+.inputForm select:focus,
+.inputForm textarea:focus {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 2px solid #06748c;
+  box-sizing: border-box;
+  display: block;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  outline: none;
+}

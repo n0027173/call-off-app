@@ -3,7 +3,6 @@
 button {
   font-size: 18px;
   border: none;
-  /* background-color: #99E5EA; */
   background-color: #06748c;
   border: 0;
   padding: 10px 40px 10px 40px;
@@ -17,8 +16,6 @@ button:hover,
 button:active {
   background-color: #06748c;
   border: 0;
-  /* padding: 15px 25px 15px 25px; */
-  /* border-radius: 8px; */
   cursor: pointer;
 }
 
