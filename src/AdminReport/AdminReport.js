@@ -10,7 +10,11 @@ const AdminReport = (props) => {
       .then(data => setCallOffs(data))
       .catch(e => console.log(e));
   }, []);
+  const handleDelete = () => {
+    props.setActiveTab("");
+    props.setActiveTab("AdminReport");
 
+  }
   // Format date to mm/dd/yyyy
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -29,7 +33,7 @@ const AdminReport = (props) => {
           // Update state to remove the deleted item
           const updatedCallOffs = callOffs.filter((callOff) => callOff.id !== id);
           setCallOffs(updatedCallOffs);
-          handleDelete();
+          
         } else {
           console.error("Failed to delete record");
         }
@@ -37,10 +41,9 @@ const AdminReport = (props) => {
       .catch((e) => {
         console.error(e);
       });
+      handleDelete();
   };
-  const handleDelete = () => {
-    props.setActiveTab("AdminReport");
-  };
+
   return (
     <div className="AdminReport">
       <h2>ADMIN REPORT</h2>
