@@ -7,3 +7,9 @@ p, h2 {
     font-size: 1.75rem;
     padding: 25px 15px 25px 15px;
   }
+  img {
+    /* margin-left: 16px;
+    text-decoration: none;
+    padding: 6px; */
+    cursor: pointer;
+  }

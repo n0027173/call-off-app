@@ -8,6 +8,7 @@
 .inputForm label {
   text-align: left;
   display: block;
+  font-weight: 400;
 }
 
 .inputForm h1 {

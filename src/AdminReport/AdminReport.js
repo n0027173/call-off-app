@@ -10,11 +10,7 @@ const AdminReport = (props) => {
       .then(data => setCallOffs(data))
       .catch(e => console.log(e));
   }, []);
-  const handleDelete = () => {
-    props.setActiveTab("");
-    props.setActiveTab("AdminReport");
-
-  }
+  
   // Format date to mm/dd/yyyy
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -31,9 +27,7 @@ const AdminReport = (props) => {
       .then((response) => {
         if (response.ok) {
           // Update state to remove the deleted item
-          const updatedCallOffs = callOffs.filter((callOff) => callOff.id !== id);
-          setCallOffs(updatedCallOffs);
-          
+          setCallOffs(callOffs.filter((callOff) => callOff.id !== id));
         } else {
           console.error("Failed to delete record");
         }
@@ -41,7 +35,6 @@ const AdminReport = (props) => {
       .catch((e) => {
         console.error(e);
       });
-      handleDelete();
   };
 
   return (
@@ -64,12 +57,11 @@ const AdminReport = (props) => {
           {callOffs.map(callOffData => (
             <tr key={callOffData.id}>
               <th scope="row" style={{ textAlign: "center" }}>
-                <img
+                <img alt="Edit Icon" title="Edit Record"
                   className="editIcon"
                   height="22px"
                   width="22px"
                   src="../assets/edit.png"
-                  alt="Edit Record"
                 />
               </th>
               <td>{formatDate(callOffData.callOffDate)}</td>
@@ -81,12 +73,11 @@ const AdminReport = (props) => {
               <td>{formatDate(callOffData.dateTimeSubmitted)}</td>
               <td>{callOffData._id}</td>
               <td>
-                <img onClick={() => deleteCallOff(callOffData._id)}
+                <img alt="Delete Icon" title="Delete Record" onClick={() => deleteCallOff(callOffData._id)}
                   className="deleteIcon"
                   height="22px"
                   width="22px"
                   src="../assets/delete.png"
-                  alt="Delete Record"
                 />
               </td>
             </tr>
