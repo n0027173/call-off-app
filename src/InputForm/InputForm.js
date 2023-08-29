@@ -39,6 +39,7 @@ const InputForm = (props) => {
     })
       .then((response) => {
         console.log(response);
+        handleSubmit();
         
       })
       .catch((e) => console.log(e));
@@ -50,8 +51,8 @@ const InputForm = (props) => {
   //   navigate('/',{replace: true}); 
   // }
 
-  const handleSubmit = (submitButton) => {
-    props.setActiveTab(submitButton);
+  const handleSubmit = () => {
+    props.setActiveTab("ConfirmationPage");
   };
 
   return (
@@ -111,7 +112,7 @@ const InputForm = (props) => {
         </select>
         <label htmlFor="comments">Comments:</label>
         <textarea id="comments" name="comments" onChange={(e) => setComments(e.target.value)}></textarea>
-        <button onClick={(e) => {handleSubmit("ConfirmationPage")}} type="submit">Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
     );

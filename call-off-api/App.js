@@ -26,7 +26,22 @@ app.get("api/calloffs", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+    // DELETE endpoint
+  app.delete('api/callOffs/:id', async (req, res) => {
+    const id = req.params.id;
 
+    try {
+      const result = await collection.deleteOne({ _id: id });
+      if (result.deletedCount === 1) {
+        res.status(200).send('Successfully deleted record.');
+      } else {
+        res.status(404).send('Record not found.');
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error.');
+    }
+  });
 app.server = app.listen(port, () => {
   console.log(`Running on port ${port}`);
 });

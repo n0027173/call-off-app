@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../styles/AdminReport.css';
 
-const AdminReport = () => {
+const AdminReport = (props) => {
   const [callOffs, setCallOffs] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,28 @@ const AdminReport = () => {
     const year = date.getFullYear();
     return `${month}/${day}/${year}`;
   };
-
+  const deleteCallOff = (id) => { 
+    // Send a DELETE request to your server
+    fetch(`http://localhost:8080/api/callOffs/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Update state to remove the deleted item
+          const updatedCallOffs = callOffs.filter((callOff) => callOff.id !== id);
+          setCallOffs(updatedCallOffs);
+          handleDelete();
+        } else {
+          console.error("Failed to delete record");
+        }
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  };
+  const handleDelete = () => {
+    props.setActiveTab("AdminReport");
+  };
   return (
     <div className="AdminReport">
       <h2>ADMIN REPORT</h2>
@@ -57,7 +78,7 @@ const AdminReport = () => {
               <td>{formatDate(callOffData.dateTimeSubmitted)}</td>
               <td>{callOffData._id}</td>
               <td>
-                <img
+                <img onClick={() => deleteCallOff(callOffData._id)}
                   className="deleteIcon"
                   height="22px"
                   width="22px"
