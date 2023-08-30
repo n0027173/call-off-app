@@ -47,7 +47,7 @@ const AdminReport = (props) => {
             <th scope="col">Call Off Date</th>
             <th scope="col">Employee</th>
             <th scope="col">Reason</th>
-            <th scope="col">IEX Updated</th>
+            <th scope="col">WFM Updated</th>
             <th scope="col">Date Submitted</th>
             <th scope="col">Confirmation</th>
             <th scope="col"></th>
@@ -66,7 +66,7 @@ const AdminReport = (props) => {
               </th>
               <td>{formatDate(callOffData.callOffDate)}</td>
               <td>
-                {callOffData.firstName} {callOffData.lastName}
+                 {callOffData.lastName}, {callOffData.firstName}
               </td>
               <td>{callOffData.callOffReason}</td>
               <td>{callOffData.iexUpdated ? "Yes" : "No"}</td>
