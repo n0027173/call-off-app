@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import DatePicker from "./DatePicker";
 import "../styles/InputForm.css";
 import "../styles/Buttons.css";
-// import { Router, useNavigate } from "react-router-dom";
 
 const InputForm = (props) => {
   const [firstName, setFirstName] = useState("");
@@ -12,7 +11,6 @@ const InputForm = (props) => {
   const [employeeId, setEmployeeId] = useState("");
   const [callOffReason, setCallOffReason] = useState("");
   const [comments, setComments] = useState("");
-
 
   const handleOffice = (e) => {
     setOffice(e.target.value);
@@ -44,12 +42,6 @@ const InputForm = (props) => {
       })
       .catch((e) => console.log(e));
   };
-  // const navigate = useNavigate();
-  // const handleClick = () => {
-  //   console.log("button is clicked")
-  //   navigate('./confirmation/confirmation'); // Redirect to new page
-  //   navigate('/',{replace: true}); 
-  // }
 
   const handleSubmit = () => {
     props.setActiveTab("ConfirmationPage");
@@ -82,6 +74,7 @@ const InputForm = (props) => {
           type="text"
           required
           onChange={(e) => setLastName(e.target.value)}
+          onBlur={(e) => setLastName(e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1))}
         />
         <label htmlFor="office">Office:</label>
         <select id="office" name="office" required value={office} onChange={handleOffice}>

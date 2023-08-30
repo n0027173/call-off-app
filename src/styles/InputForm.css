@@ -37,6 +37,7 @@
   display: block;
   font-size: 0.9rem;
   border-radius: 4px;
+  text-transform: capitalize;
 }
 
 .inputForm textarea {
