@@ -4,13 +4,29 @@ import '../styles/AdminReport.css';
 const AdminReport = (props) => {
   const [callOffs, setCallOffs] = useState([]);
 
+  const fetchCallOffs = () => {
+    fetch("http://localhost:8080/api/callOffs")
+      .then(response => response.json())
+      .then(data => setCallOffs(data))
+      .catch(e => console.log(e));
+  };
+
+  useEffect(() => {
+    fetchCallOffs();
+  }, []);
+
   useEffect(() => {
     fetch("http://localhost:8080/api/callOffs")
       .then(response => response.json())
       .then(data => setCallOffs(data))
       .catch(e => console.log(e));
   }, []);
-  
+
+  const handleDelete = () => {
+    props.setActiveTab("");
+    props.setActiveTab("AdminReport");
+
+  }
   // Format date to mm/dd/yyyy
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -28,6 +44,7 @@ const AdminReport = (props) => {
         if (response.ok) {
           // Update state to remove the deleted item
           setCallOffs(callOffs.filter((callOff) => callOff.id !== id));
+          fetchCallOffs(); 
         } else {
           console.error("Failed to delete record");
         }
@@ -35,6 +52,8 @@ const AdminReport = (props) => {
       .catch((e) => {
         console.error(e);
       });
+      handleDelete();
+      
   };
 
   return (
