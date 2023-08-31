@@ -29,24 +29,22 @@ function routes(CallOff) {
       // returnCallOff.links.FilterByThisCallOffReason = `http://${req.headers.host}/api/callOffs/?callOffReason=${callOffReason}`;
       res.json(returnCallOff);
     })
-    .put((req, res) => {
-      const { callOff } = req;
-      callOff.dateTimeSubmitted = req.body.dateTimeSubmitted;
-      callOff.callOffDate = req.body.callOffDate;
-      callOff.employeeID = req.body.employeeID;
-      callOff.lastName = req.body.lastName;
-      callOff.firstName = req.body.firstName;
-      callOff.office = req.body.office;
-      callOff.callOffReason = req.body.callOffReason;
-      callOff.comments = req.body.comments;
-      callOff.IEXUpdated = req.body.IEXUpdated;
-      // Extra Comment
-      req.callOff.save((err) => {
-        if (err) {
-          return res.send(err);
-        }
-        return res.json(callOff);
-      });
+    .put(async (req, res) => {
+      const updatedRecord = await CallOff.findOneAndUpdate(req.params.callOffId,{
+       dateTimeSubmitted : req.body.dateTimeSubmitted,
+       callOffDate : req.body.callOffDate,
+       employeeID : req.body.employeeID,
+       lastName : req.body.lastName,
+       firstName : req.body.firstName,
+       office : req.body.office,
+       callOffReason : req.body.callOffReason,
+       comments : req.body.comments,
+       IEXUpdated : req.body.IEXUpdated,
+      }, {upsert: true}
+      
+      )    
+      
+      res.status(201).json({callOff: updatedRecord});
     })
     .patch((req, res) => {
       const { callOff } = req;
@@ -60,7 +58,7 @@ function routes(CallOff) {
         const value = item[1];
         callOff[key] = value;
       });
-      req.callOff.save((err) => {
+      callOff.save((err) => {
         if (err) {
           return res.send(err);
         }
