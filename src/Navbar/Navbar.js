@@ -45,18 +45,18 @@ const NavBar = (props) => {
                 </NavItem>
                 <NavItem>
                 <NavLink onClick={(e) => {
-                      handleLinkClick("AdminReport");
-                    }}
-                    >
-                    Admin
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                <NavLink onClick={(e) => {
                       handleLinkClick("Guidelines");
                     }}
                     >
                     Guidelines
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                <NavLink onClick={(e) => {
+                      handleLinkClick("AdminReport");
+                    }}
+                    >
+                    WFM
                   </NavLink>
                 </NavItem>
               </Nav>

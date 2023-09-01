@@ -1,26 +1,36 @@
-div .inputForm {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.inputForm {
+.updateForm {
   max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+  /* margin: 20px; */
+  text-align: left;
+  background-color: #F5F5F5;
+  padding: 25px 0px 0px 0px;
 }
-.inputForm label {
+
+.updateForm label {
   text-align: left;
   display: block;
   font-weight: 400;
 }
-.inputForm h1 {
-  padding: 20px 0px 20px 0px;
+
+.updateForm h1 {
+  padding: 0px 0px 0px 0px;
+  text-align: left;
+  margin: 0 auto;
   font-size: 1.75rem;
-}
-.inputForm h2 {
-  font-size: 2rem;
   color: #343741;
   margin-bottom: 30px;
 }
-.inputForm input,
-.inputForm select {
+
+.updateForm h2 {
+  font-size: 2rem;
+  color: #343741;
+  margin-bottom: 0px;
+}
+
+.updateForm input,
+.updateForm select {
   width: 400px;
   height: 35px;
   padding: 6px 10px;
@@ -32,7 +42,8 @@ div .inputForm {
   border-radius: 4px;
   text-transform: capitalize;
 }
-.inputForm textarea {
+
+.updateForm textarea {
   width:400px;
   padding: 6px 10px;
   margin: 10px 0;
@@ -42,10 +53,11 @@ div .inputForm {
   font-size: 0.9rem;
   border-radius: 4px;
 }
-.inputForm input:focus,
-.inputForm input:focus-visible,
-.inputForm select:focus,
-.inputForm textarea:focus {
+
+.updateForm input:focus,
+.updateForm input:focus-visible,
+.updateForm select:focus,
+.updateForm textarea:focus {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
@@ -57,3 +69,4 @@ div .inputForm {
   outline: none;
   width:400px;
 }
+

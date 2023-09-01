@@ -36,3 +36,23 @@
   cursor: hand;
   text-decoration: underline;
 }
+.navbar .mr-2 {
+  background-color: #ffd000;
+  border-color: 3px solid #343741;
+}
+.navbar .navbar-toggler {
+  border: 2px solid #343741;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+/* .navbar .navbar-toggler a:active  {
+  border: 2px solid #343741;
+} */
+/* .navbar .mr-2 a:hover {
+  background-color: aquamarine;
+  border-color: #343741;
+} */

@@ -1,15 +1,28 @@
-p, h2 {
-  display: block;
-  width: 100%;
-  padding: 15px 15px 0px 15px;
-  }
-  h2 {
-    font-size: 1.75rem;
-    padding: 25px 15px 25px 15px;
+div .AdminReport {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.AdminReport h1 {
+  padding: 20px 0px 20px 0px;
+  font-size: 1.75rem;
   }
   img {
-    /* margin-left: 16px;
-    text-decoration: none;
-    padding: 6px; */
     cursor: pointer;
   }
+button {
+  font-size: 18px;
+  border: none;
+  background-color: #06748c;
+  border: 0;
+  padding: 8px 20px 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+}
+button:hover,
+button:active {
+  background-color: #06748c;
+  border: 0;
+  cursor: pointer;
+}

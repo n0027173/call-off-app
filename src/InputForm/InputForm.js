@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import DatePicker from "./DatePicker";
 import "../styles/InputForm.css";
-import "../styles/Buttons.css";
+import SubmitButton from "../Buttons/SubmitButton";
 
 const InputForm = (props) => {
   const [firstName, setFirstName] = useState("");
-  const [date, setDate] = useState(new Date());
+  const [callOffDate, setCallOffDate] = useState(new Date());
   const [office, setOffice] = useState("");
   const [lastName, setLastName] = useState("");
   const [employeeId, setEmployeeId] = useState("");
@@ -27,11 +27,12 @@ const InputForm = (props) => {
       body: JSON.stringify({
         firstName: firstName,
         lastName: lastName,
-        callOffDate: date.toISOString(),
+        callOffDate: callOffDate.toISOString(),
         callOffReason: callOffReason,
         dateTimeSubmitted: Date.now(),
         office: office,
         employeeID: employeeId,
+        IEXUpdated: "No",
         comments: comments,
       }),
     })
@@ -50,11 +51,12 @@ const InputForm = (props) => {
   return (
     <div className="inputForm">
       <form onSubmit={submitCallOff}>
-        <h1>ABSENCE MANAGEMENT FORM</h1>
+        <h1>Absence Management System</h1>
         <label>Call Off Date:</label>
         <DatePicker
-          selected={date}
-          onChange={setDate}
+          // selected={callOffDate}
+          onChange={(e) => setCallOffDate(e.target.value)}
+          // onChange={setCallOffDate}
           dateFormat="MM/dd/yyyy"
         />
         <label htmlFor="employeeID">Employee ID:</label>
@@ -105,7 +107,7 @@ const InputForm = (props) => {
         </select>
         <label htmlFor="comments">Comments:</label>
         <textarea id="comments" name="comments" onChange={(e) => setComments(e.target.value)}></textarea>
-        <button type="submit">Submit</button>
+        <SubmitButton />
       </form>
     </div>
     );

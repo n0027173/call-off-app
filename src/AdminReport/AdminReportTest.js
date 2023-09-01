@@ -6,6 +6,7 @@ import '../styles/AdminReport.css';
 import "../styles/InputForm.css";
 import "../styles/UpdateForm.css";
 
+
 const AdminReportTest = (props) => {
   const [callOffs, setCallOffs] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false); // Add a state variable to track the modal status
@@ -55,11 +56,14 @@ const AdminReportTest = (props) => {
         console.error(e);
       });
   };
+
+  // Define a function to open the modal and set the selected call off data
   const openModal = (callOffData) => {
     setModalIsOpen(true);
     setSelectedCallOff(callOffData);
   };
 
+  // Define a function to close the modal and reset the selected call off data
   const closeModal = () => {
     setModalIsOpen(false);
     setSelectedCallOff(null);
@@ -67,7 +71,7 @@ const AdminReportTest = (props) => {
 
   return (
     <div className="AdminReport">
-      <h1>Absence Management System - Workforce Management</h1>
+      <h2>ADMIN REPORT</h2>
       <table className="table table-striped">
         <thead>
           <tr>
@@ -100,7 +104,7 @@ const AdminReportTest = (props) => {
                 {callOffData.lastName}, {callOffData.firstName}
               </td>
               <td>{callOffData.callOffReason}</td>
-              <td>{callOffData.IEXUpdated}</td>
+              <td>{callOffData.iexUpdated ? "Yes" : "No"}</td>
               <td>{formatDate(callOffData.dateTimeSubmitted)}</td>
               <td>{callOffData._id}</td>
               <td>
@@ -118,7 +122,7 @@ const AdminReportTest = (props) => {
           ))}
         </tbody>
       </table>
-      <br />
+
       {/* Add a Modal component below the table */}
       <Modal
         isOpen={modalIsOpen} // Set the modal status based on the state variable
@@ -133,12 +137,7 @@ const AdminReportTest = (props) => {
             {/* <InputForm /> */}
             <div className="updateForm">
               <form>
-                <h1>Absence Management System</h1>
-                {/* <label htmlFor="WFMUpdated">WFM Updated:</label>
-                <select id="WFMUpdated" name="WFMUpdated" required>
-                  <option value="No">No</option>
-                  <option value="Yes">Yes</option>
-                </select> */}
+                <h1>ABSENCE MANAGEMENT FORM</h1>
                 <label>Call Off Date:</label>
                 <DatePicker
                   // selected={date}

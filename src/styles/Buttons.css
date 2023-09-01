@@ -19,3 +19,11 @@ button:active {
   cursor: pointer;
 }
 
+.buttonContainer {
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+

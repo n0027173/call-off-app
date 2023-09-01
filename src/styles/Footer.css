@@ -1,0 +1,16 @@
+
+div .footer {
+  font-size: .8rem;
+  text-align: center;
+  /* color: white; */
+}
+div .footer p {
+  padding: 0px;
+}
+div .footer hr {
+  border-top: 3px solid #F5F5F5;
+  /* padding-bottom: -25px; */
+}
+
+
+
